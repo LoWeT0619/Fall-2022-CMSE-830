@@ -13,5 +13,3 @@ st.plotly_chart(fig, use_container_width=True, sharing="streamlit")
 
 # It is even more clear through the 3D scatter plot that there are obvious clusters between different species.
 # Setosa is much more different than other two species.
-
-## Plotly works with "mpg" dataset from sseaborn
