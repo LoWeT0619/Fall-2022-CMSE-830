@@ -9,51 +9,9 @@ fig = px.scatter_3d(df_iris,
                     x='sepal_length', y='sepal_width', z='petal_width',
                     color='species')
 
-fig.show()
+st.plotly_chart(fig, use_container_width=True, sharing="streamlit")
 
 # It is even more clear through the 3D scatter plot that there are obvious clusters between different species.
 # Setosa is much more different than other two species.
 
 ## Plotly works with "mpg" dataset from sseaborn
-
-import seaborn as sns
-import plotly.express as px
-
-df_mpg = sns.load_dataset("mpg")
-
-fig = px.scatter_3d(df_mpg,
-                    x='cylinders', y='weight', z='model_year',
-                    color='origin')
-
-fig.show()
-
-## Using different visualization libraries
-
-import matplotlib.pyplot as plt
-from matplotlib import cm
-from matplotlib.ticker import LinearLocator
-import numpy as np
-
-fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
-
-# Make data.
-X = np.arange(-5, 5, 0.25)
-Y = np.arange(-5, 5, 0.25)
-X, Y = np.meshgrid(X, Y)
-R = np.sqrt(X**2 + Y**2)
-Z = np.sin(R)
-
-# Plot the surface.
-surf = ax.plot_surface(X, Y, Z, cmap=cm.coolwarm,
-                       linewidth=0, antialiased=False)
-
-# Customize the z axis.
-ax.set_zlim(-1.01, 1.01)
-ax.zaxis.set_major_locator(LinearLocator(10))
-# A StrMethodFormatter is used automatically
-ax.zaxis.set_major_formatter('{x:.02f}')
-
-# Add a color bar which maps values to colors.
-fig.colorbar(surf, shrink=0.5, aspect=5)
-
-plt.show()
