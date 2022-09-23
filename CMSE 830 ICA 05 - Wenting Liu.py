@@ -26,7 +26,7 @@ fig, (ax_kdeplot, ax_boxplot, ax_violinplot, ax_scatterplot, ax_heatmap)  = plt.
     ncols=1,
     figsize=(6, 6))
 
-sns.kdeplot(data=data, x="radius_mean", y="smoothness_mean", rug=True, ax=ax_kdeplot)
+sns.kdeplot(data=data, x="radius_mean", y="smoothness_mean", ax=ax_kdeplot)
 sns.boxplot(data=data,
             x="radius_mean",
             y="diagnosis",
