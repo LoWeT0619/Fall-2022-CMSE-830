@@ -4,7 +4,7 @@ import seaborn as sns
 import pandas as pd
 import streamlit as st
 
-data = pd.read_csv("data.csv")
+data = pd.read_csv("https://raw.githubusercontent.com/LoWeT0619/Fall-2022-CMSE-830/main/data.csv")
 
 features_mean,features_se,features_worst =[],[],[]
 for feat in data.columns:
