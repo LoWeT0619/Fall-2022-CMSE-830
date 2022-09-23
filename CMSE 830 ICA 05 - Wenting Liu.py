@@ -40,8 +40,8 @@ sns.violinplot(data=data,
 sns.scatterplot(data=data, x="radius_mean", y="smoothness_mean", hue="diagnosis", ax=ax_scatterplot)
 sns.heatmap(data[features_mean].corr(), annot=True, cmap="PiYG", ax=ax_heatmap)
 
-ax_kdeplot1.set_title("kdeplot - radius_mean vs smoothness_mean")
-ax_kdeplot1.grid(True)
+ax_kdeplot.set_title("kdeplot - radius_mean vs smoothness_mean")
+ax_kdeplot.grid(True)
 ax_boxplot.set_title("boxplot - radius_mean vs diagnosis")
 ax_violinplot.set_title("violinplot - smoothness_mean vs diagnosis")
 ax_scatterplot.set_title("scatterplot - radius_mean vs smoothness_mean")
