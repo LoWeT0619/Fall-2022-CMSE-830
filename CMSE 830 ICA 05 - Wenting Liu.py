@@ -4,7 +4,8 @@ import seaborn as sns
 import pandas as pd
 import streamlit as st
 
-data = pd.read_csv("https://raw.githubusercontent.com/LoWeT0619/Fall-2022-CMSE-830/main/data.csv")
+url = 'https://raw.githubusercontent.com/LoWeT0619/Fall-2022-CMSE-830/main/data.csv'
+data = pd.read_csv(url, index_col=0)
 
 features_mean,features_se,features_worst =[],[],[]
 for feat in data.columns:
@@ -24,7 +25,7 @@ st.write('You selected:', option)
 fig, (ax_kdeplot, ax_boxplot, ax_violinplot, ax_scatterplot, ax_heatmap)  = plt.subplots(
     nrows=5,
     ncols=1,
-    figsize=(6, 6))
+    figsize=(25, 25))
 
 sns.kdeplot(data=data, x="radius_mean", y="smoothness_mean", ax=ax_kdeplot)
 sns.boxplot(data=data,
@@ -49,4 +50,4 @@ ax_heatmap.set_title("heatmap for each mean")
 
 fig.set_tight_layout(True)
 
-st.pyplot(fig)
+st.pyplot(fig, clear_figure=True)
