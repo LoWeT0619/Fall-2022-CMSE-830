@@ -70,7 +70,9 @@ values=[]
 # improvement: make the min and max values correspond to what the user selected
 for parameter, parameter_df in zip(parameter_list, parameter_default_values):
  
-    values = st.sidebar.slider(label=parameter, key=parameter, value=float(parameter_df), min_value=-10.0, max_value=10.0, step=0.1)
+    values = st.sidebar.slider(label=parameter, key=parameter, value=float(parameter_df),
+                               min_value=float(parameter_df).min(),
+                               max_value=float(parameter_df).max(), step=0.1)
     parameter_input_values.append(values)
  
 input_variables = pd.DataFrame([parameter_input_values], columns=parameter_list, dtype=float)
