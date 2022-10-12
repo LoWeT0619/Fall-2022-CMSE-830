@@ -130,8 +130,8 @@ rbf_reg = alt.Chart(rbf_df).mark_line().encode(
     y='y',
     color=alt.value("#00FF00"))
 
-scatter = alt.Chart(df_mpg).mark_circle(size=100).encode(x=x_axis_choice, y=y_axis_choice, color='mpg',
-    tooltip=['cylinders', 'origin', 'name']).interactive()
+scatter = alt.Chart(df_peng).mark_circle(size=100).encode(x=x_axis_choice, y=y_axis_choice, color='island',
+    tooltip=['species', 'island', 'sex']).interactive()
 
 scatter + linear_reg + rbf_reg
 
