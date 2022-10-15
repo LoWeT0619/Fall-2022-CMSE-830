@@ -114,7 +114,7 @@ rbf_values = []
 for rbf_parameter, rbf_parameter_df in zip(rbf_parameter_list, rbf_parameter_default_values):
  
     rbf_values = st.sidebar.slider(label=rbf_parameter, key=rbf_parameter, value=float(rbf_parameter_df),
-                                   min_value=float(rbf_parameter_df)-3.0, max_value=float(rbf_parameter_df)+3.0, step=0.1)
+                                   min_value=float(rbf_parameter_df)-25.0, max_value=float(rbf_parameter_df)+25.0, step=0.1)
     rbf_parameter_input_values.append(rbf_values)
  
 rbf_input_variables = pd.DataFrame([rbf_parameter_input_values], columns=rbf_parameter_list, dtype=float)
