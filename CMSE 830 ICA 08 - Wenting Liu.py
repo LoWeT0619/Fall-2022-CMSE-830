@@ -44,10 +44,15 @@ y_axis_choice = st.sidebar.selectbox(
 # range of the plots will change; think about how to scale
 # the plots and the ranges of the sliders to account for 
 # what the user has chosen to explore
-min_x = labels.min(axis=0)[x_axis_choice]
-max_x = labels.max(axis=0)[x_axis_choice]
-min_y = labels.min(axis=0)[y_axis_choice]
-max_y = labels.max(axis=0)[y_axis_choice]
+# min_x = labels.min(axis=0)[x_axis_choice]
+# max_x = labels.max(axis=0)[x_axis_choice]
+# min_y = labels.min(axis=0)[y_axis_choice]
+# max_y = labels.max(axis=0)[y_axis_choice]
+
+min_x = labels.min(axis=0)(x_axis_choice)
+max_x = labels.max(axis=0)(x_axis_choice)
+min_y = labels.min(axis=0)(y_axis_choice)
+max_y = labels.max(axis=0)(y_axis_choice)
 
 
 ##########
