@@ -60,9 +60,12 @@ max_y = df[y_axis_choice].max(axis=0)
 
 st.sidebar.write('line: slope and intercept')
 
+slope = float((max_y-min_y)/(max_x-min_x))
+intercept = float(min_y-slope*min_x)
+
 parameter_list = ['slope', 'intercept']
 parameter_input_values = []
-parameter_default_values = ['0.0', '0.0']
+parameter_default_values = [slope, intercept]
 values = []
 
 # line sliders
